@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { APIKeySetup } from '@/components/AI/APIKeySetup';
 
 interface FormSectionProps {
@@ -6,6 +6,15 @@ interface FormSectionProps {
 }
 
 export const FormSection = ({ children }: FormSectionProps) => {
+  const [userName, setUserName] = useState<string>('');
+
+  useEffect(() => {
+    const savedName = localStorage.getItem('userName');
+    if (savedName) {
+      setUserName(savedName);
+    }
+  }, []);
+
   return (
     <div className="w-1/2 h-screen overflow-y-auto bg-background p-6">
       <div className="max-w-2xl mx-auto space-y-6">
@@ -16,7 +25,7 @@ export const FormSection = ({ children }: FormSectionProps) => {
                 Currículo Fácil
               </h1>
               <p className="text-muted-foreground text-lg">
-                Crie seu currículo profissional com a ajuda da inteligência artificial
+                {userName ? `Olá ${userName}! Agora` : 'Agora'} termine de preencher suas informações para fazer seu currículo
               </p>
             </div>
             <APIKeySetup />
