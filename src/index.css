@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CV Builder AI Design System - Modern & Professional */
+
+@layer base {
+  :root {
+    /* Professional & Modern Color Palette */
+    --background: 214 32 91; /* #E1E7F5 - Azul Claro Suave */
+    --foreground: 215 28 17; /* #1E293B - Texto Escuro Legível */
+
+    /* Primary Brand Colors */
+    --primary: 217 91 60; /* #2563EB - Azul Royal */
+    --primary-dark: 217 91 55; /* Darker shade of royal blue */
+    --primary-darker: 217 91 50; /* Even darker shade */
+    --primary-foreground: 0 0 100; /* White */
+
+    /* CV Builder Specific Colors */
+    --cv-accent: 262 83 58; /* #7C3AED - Roxo Elegante */
+    --cv-accent-foreground: 0 0 100; /* White */
+    --cv-experience: 217 91 60; /* #2563EB - Azul Royal */
+    --cv-experience-foreground: 0 0 100; /* White */
+
+    /* Clean UI Colors */
+    --card: 0 0 100; /* #FFFFFF - Branco limpo */
+    --card-foreground: 217 33 17; /* #111827 - Texto principal */
+    --card-border: 220 13 91; /* Light gray border */
+
+    --popover: 0 0 100; /* White */
+    --popover-foreground: 217 33 17; /* Dark text */
+
+    --secondary: 214 27 84; /* #CBD5E1 - Azul Claro Secundário */
+    --secondary-foreground: 215 28 17; /* Dark text */
+
+    --muted: 214 27 84; /* #CBD5E1 - Azul Claro Secundário */
+    --muted-foreground: 215 25 46; /* #475569 - Texto Secundário Legível */
+
+    --accent: 262 83 58; /* #7C3AED - Roxo elegante */
+    --accent-foreground: 0 0 100; /* White */
+
+    --destructive: 0 84 60; /* #EF4444 - Vermelho suave */
+    --destructive-foreground: 0 0 100; /* White */
+
+    --success: 160 84 39; /* #10B981 - Verde esmeralda */
+    --success-foreground: 0 0 100; /* White */
+
+    --warning: 43 96 56; /* #F59E0B - Amarelo dourado */
+    --warning-foreground: 217 33 17; /* Dark text for better contrast */
+
+    --border: 220 13 91; /* Light gray border */
+    --input: 0 0 100; /* #FFFFFF - White input background */
+    --ring: 217 91 60; /* #2563EB - Focus ring */
+
+    --radius: 8px;
+
+    /* Professional Gradients with New Palette */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91 60) 0%, hsl(262 83 58) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(262 83 58) 0%, hsl(262 83 65) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0 100) 0%, hsl(220 14 98) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0 100) 0%, hsl(220 14 98 / 0.5) 100%);
+
+    /* Professional Shadows with New Palette */
+    --shadow-sm: 0 1px 2px 0 hsl(217 33 17 / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(217 33 17 / 0.1), 0 2px 4px -1px hsl(217 33 17 / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(217 33 17 / 0.1), 0 4px 6px -2px hsl(217 33 17 / 0.05);
+    --shadow-card: 0 1px 3px 0 hsl(217 33 17 / 0.1), 0 1px 2px 0 hsl(217 33 17 / 0.06);
+    --shadow-glow: 0 0 20px hsl(217 91 60 / 0.3);
+    --shadow-elegant: 0 4px 20px -2px hsl(217 33 17 / 0.08);
+
+    /* Smooth Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s ease-out;
+  }
+
+  .dark {
+    --background: 17 24 39; /* Gray-900 */
+    --foreground: 249 250 251; /* Gray-50 */
+    
+    --primary: 59 130 246; /* Blue-500 */
+    --primary-dark: 37 99 235; /* Blue-600 */
+    --primary-darker: 29 78 216; /* Blue-700 */
+    --primary-foreground: 255 255 255;
+
+    --card: 31 41 55; /* Gray-800 */
+    --card-foreground: 249 250 251;
+    --card-border: 55 65 81; /* Gray-700 */
+
+    --secondary: 55 65 81; /* Gray-700 */
+    --secondary-foreground: 209 213 219; /* Gray-300 */
+
+    --muted: 31 41 55; /* Gray-800 */
+    --muted-foreground: 156 163 175; /* Gray-400 */
+
+    --border: 55 65 81; /* Gray-700 */
+    --input: 55 65 81; /* Gray-700 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Professional Typography - Inter/Poppins style */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-foreground;
+  }
+
+  h1 {
+    @apply text-3xl lg:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl lg:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl lg:text-2xl;
+  }
+
+  /* CV Builder Specific Styles - Modern & Clean */
+  .cv-form-section {
+    @apply bg-card border border-card-border p-6 rounded-lg shadow-[var(--shadow-elegant)] 
+           hover:shadow-[var(--shadow-lg)] transition-[var(--transition-smooth)];
+  }
+
+  .cv-preview-section {
+    @apply bg-white border border-card-border p-8 rounded-lg shadow-[var(--shadow-elegant)] min-h-[800px];
+    background: linear-gradient(145deg, hsl(255 255 255) 0%, hsl(249 250 251) 100%);
+  }
+
+  .cv-input-group {
+    @apply space-y-2;
+  }
+
+  .cv-section-header {
+    @apply flex items-center justify-between pb-4 border-b-2 border-primary/20 mb-6;
+  }
+
+  /* Modern Form Elements */
+  .cv-form-card {
+    @apply bg-white p-5 rounded-xl border border-gray-200 shadow-sm 
+           hover:shadow-md transition-[var(--transition-smooth)];
+  }
+
+  .cv-skill-chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
+           bg-primary/10 text-primary border border-primary/20
+           hover:bg-primary/15 transition-[var(--transition-fast)];
+  }
+
+  /* Form animations */
+  .cv-form-item {
+    @apply animate-fade-in;
+  }
+
+  /* Improved button styling */
+  .cv-primary-button {
+    @apply bg-primary hover:bg-primary-dark text-white font-medium px-4 py-2 rounded-lg
+           transition-[var(--transition-fast)] shadow-sm hover:shadow-md
+           focus:ring-2 focus:ring-primary/20 focus:outline-none;
+  }
+
+  .cv-secondary-button {
+    @apply bg-white hover:bg-gray-50 text-gray-700 font-medium px-4 py-2 rounded-lg
+           border border-gray-300 transition-[var(--transition-fast)] shadow-sm hover:shadow-md
+           focus:ring-2 focus:ring-primary/20 focus:outline-none;
+  }
+
+  /* Text shadow utility for better readability */
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Animation Classes */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulseSubtle 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulseSubtle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+}
