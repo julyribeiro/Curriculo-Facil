@@ -39,15 +39,14 @@ Projeto desenvolvido como parte do  **Programa Desenvolve**.
 ---
 
 ## 🖼️ Como Usar
-1. Clone este repositório:
+1. Clone este repositório e instale as dependências:
    ```bash
    git clone https://github.com/seu-usuario/cv-builder-ai.git
-    ```
-    
-    ```bash
+   cd cv-builder-ai
    npm install
-    ```
+   ```
 
-    ```bash
+2. Inicie o servidor de desenvolvimento (Terminal):
+   ```bash
    npm run dev
-    ```
+   ```
