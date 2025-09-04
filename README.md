@@ -6,7 +6,6 @@ Projeto desenvolvido como parte do  **Programa Desenvolve**.
 ---
 
 ## 👥 Grupo
-- [Coloque aqui o nome do grupo]
 - Celso
 - Felype
 - July
